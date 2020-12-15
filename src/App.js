@@ -56,7 +56,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <AddUser handleAddUser={this.handleAddUser}/>
+        <AddUser usersData={this.state.usersData} handleAddUser={this.handleAddUser}/>
         <ListUsers usersData={this.state.usersData}/>
       </div>
     );

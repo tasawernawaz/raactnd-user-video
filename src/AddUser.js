@@ -9,12 +9,20 @@ class AddUser extends Component {
         noOfGames: 0
     }
 
+    handleSubmit = (values) => {
+        if(this.props.usersData.some(user => user.username === values.username)) {
+            alert("This user already exists");
+        } else {
+            this.props.handleAddUser(values);
+        }
+    }
+
     render () {
         return (
             <div>
                 <Formik
                 initialValues={this.initialValues}
-                onSubmit={(values) => this.props.handleAddUser(values)}
+                onSubmit={this.handleSubmit}
                 >
                 <Form>
                     Username: <Field name="username" type="text" />
